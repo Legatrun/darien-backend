@@ -1,0 +1,30 @@
+{
+  "name": "darien-backend",
+  "version": "1.0.0",
+  "description": "Reservation and IoT System",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "jest",
+    "migrate": "npx sequelize-cli db:migrate"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "morgan": "^1.10.0",
+    "mqtt": "^5.3.0",
+    "mysql2": "^3.6.5",
+    "sequelize": "^6.35.1",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.11",
+    "sequelize-cli": "^6.6.2",
+    "supertest": "^6.3.3"
+  }
+}
