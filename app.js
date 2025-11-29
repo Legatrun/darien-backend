@@ -36,20 +36,17 @@ const PORT = process.env.PORT;
 
 if (process.env.NODE_ENV !== 'test') {
   server.listen(PORT, async () => {
-    console.log(`Server running on port ${PORT}`);
+    // console.log(`Server running on port ${PORT}`);
     try {
       await sequelize.authenticate();
       console.log('Database connected');
 
-      await sequelize.sync({ alter: true }); 
-      console.log('Database synced');
+      await sequelize.sync({ alter: true });
 
-      // Initialize WebSocket
       WebSocketService.initialize(server);
       console.log('WebSocket initialized');
 
       MqttService.connect();
-      console.log('MQTT connected');
 
     } catch (error) {
       console.error('Unable to connect to the database:', error);
